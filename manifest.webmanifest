@@ -1,0 +1,9 @@
+{
+  "name": "Language easy",
+  "short_name": "Language easy",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#1D1A3A",
+  "theme_color": "#1D1A3A",
+  "icons": [{ "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}
