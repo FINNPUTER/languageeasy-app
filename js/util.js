@@ -97,9 +97,9 @@ export function store(key, value) {
 
 export const LANGS = {
   it: { name: 'Italienisch', short: 'IT', figure: 'Espresso', hello: 'Ciao!', clips: true, color: '#E07A4F', color2: '#F2D3B3', ink: '#3B2116' },
-  ja: { name: 'Japanisch', short: 'JA', figure: 'Matcha', hello: 'こんにちは!', clips: false, color: '#8FC46F', color2: '#F7B8C8', ink: '#1F3317' },
+  ja: { name: 'Japanisch', short: 'JA', figure: 'Matcha', hello: 'こんにちは!', clips: true, color: '#8FC46F', color2: '#F7B8C8', ink: '#1F3317' },
   fr: { name: 'Französisch', short: 'FR', figure: 'Macaron', hello: 'Coucou !', clips: true, color: '#F29AB0', color2: '#9FD8C1', ink: '#3A1E27' },
-  en: { name: 'Englisch', short: 'EN', figure: 'Scone', hello: 'Hello there!', clips: false, color: '#C8443F', color2: '#3E8A63', ink: '#2A1312' },
+  en: { name: 'Englisch', short: 'EN', figure: 'Scone', hello: 'Hello there!', clips: true, color: '#C8443F', color2: '#3E8A63', ink: '#2A1312' },
   de: { name: 'Deutsch', short: 'DE', figure: 'Brezel', hello: 'Hallo!', clips: true, color: '#D9963B', color2: '#F5E6C8', ink: '#3A2410' }
 };
 

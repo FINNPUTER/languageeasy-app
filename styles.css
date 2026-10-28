@@ -163,6 +163,7 @@ label, .label { display: block; font-weight: 600; margin: 14px 0 6px; }
   transform: scale(1.1); opacity: 0; transition: opacity .25s;
 }
 .stage .clip.on { opacity: 1; }
+.stage[data-lang="ja"] .clip { transform: none; object-position: 50% 45%; }
 .stage[data-lang="de"] .clip, .stage[data-lang="fr"] .clip { transform: scale(1.02); object-position: 50% 52%; }
 .stage-tint {
   position: absolute; inset: 0; pointer-events: none;
