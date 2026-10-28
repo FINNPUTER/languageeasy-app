@@ -49,6 +49,9 @@ const SVGS = {
     </g></svg>`
 };
 
+/* Randfarbe jedes Clips, damit der Hintergrund nahtlos in den Bogen übergeht */
+const CLIP_BG = {"fr": {"idle": "#C9C2C2", "listen": "#E6E2E6", "talk": "#E0DAD6", "happy": "#D2CCCB", "think": "#CAC3C2"}, "it": {"idle": "#DAD4CE", "listen": "#D8D5D4", "talk": "#DAD8D7", "happy": "#DAD4CF", "think": "#DFD8D6"}, "ja": {"idle": "#E6E0E0", "listen": "#DFDCE0", "talk": "#E4E2E4", "happy": "#DFDCE1", "think": "#E8E4EA"}, "en": {"idle": "#E2DAD6", "listen": "#DED8D8", "talk": "#D2CAC7", "happy": "#DCD3D0", "think": "#DAD3CE"}, "de": {"idle": "#D7CBC6", "listen": "#D6CECF", "talk": "#DED3CE", "happy": "#E3E0E0", "think": "#CCCACE"}};
+
 export function figureSvg(lang) { return SVGS[lang] || ''; }
 
 export class Avatar {
@@ -72,6 +75,7 @@ export class Avatar {
         this.inner.append(v);
       }
       this.videos.idle.play().catch(() => {});
+      this.paintBg('idle');
       this.videos.happy.addEventListener('ended', () => { if (this.state === 'happy') this.set('idle'); });
     } else {
       this.inner.classList.add('svg-figure');
@@ -92,9 +96,15 @@ export class Avatar {
     try { v.currentTime = 0; } catch (e) {}
     v.play().catch(() => {});
     for (const s of STATES) this.videos[s].classList.toggle('on', s === state);
+    this.paintBg(state);
     setTimeout(() => {
       for (const s of STATES) if (s !== this.state) this.videos[s].pause();
     }, 260);
+  }
+
+  paintBg(state) {
+    const c = CLIP_BG[this.lang] && CLIP_BG[this.lang][state];
+    if (c) this.el.style.backgroundColor = c;
   }
 
   cheer() { this.set('happy'); }
